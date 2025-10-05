@@ -25,7 +25,7 @@ I decided to use the [Xmin](https://xmin.yihui.org/) theme. Clean, simple. Good 
 
 Since I've managing 2 separate repositories for the source code and deploying the site, I tried my hand at a shell script to automate the process.
 
-``
+```
     #!/bin/bash
     
     # Exit on error
@@ -67,6 +67,6 @@ Since I've managing 2 separate repositories for the source code and deploying th
 
     echo "Complete."
 
-``
+```
 
-*More explanation of script to come...
+*More explanation of script to come...*
