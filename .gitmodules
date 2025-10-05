@@ -1,4 +1,0 @@
-[submodule "linuxnoob/public"]
-	path = linuxnoob/public
-	url = https://github.com/ebribi/linuxnoob.git
-	branch = main
