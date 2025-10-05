@@ -3,20 +3,32 @@ date = '2025-10-04T10:13:48-04:00'
 title = 'The Journey Begins'
 +++
 
+# An Old Dog Learning New Tricks
+
 For a long time, I resigned myself to never being a "computer person." I wasn't technology averse, but I had attempted to learn how to code on my own a couple times with no success. I assumed my brain "just doesn't work that way." But at a certain point, an unfinished history and english degree wasn't looking like the key to wealth, so I reevaluated my options. It was 2022, and a Computer Science degree was talked about as a golden ticket to high-earning careers. With nothing else going for me, I figured it couldn't hurt to give it one more (serious) try.  
 
+# Facing Fear: Another "Hello World" and the Command Line
+
 I cautiously began a Computer Science degree in Spring 2023. I started small and enrolled in an associates program at Borough of Manhattan Community College (BMCC). My first class was CSC 110, an Introduction to Programming course in Java. I remember the first day, writing a "Hello World" program. I'd done this a handful of times before in the various Learn To Code On Your Own tutorials I'd failed at in years prior, but I got really scared when the professor directed us to execute the program in the command line. Just the blank, black screen and a string of commands and file names that I didn't understand. It was at this point that I worried I had made a mistake. *I should've just finished that history degree...*    
+# Are Computer Sciences Majors *Actually* Cooked?
 
 I graduated with my Associates in Computer Science three semesters later. The summer before completed my degree, I took a chance and applied for dozens of software engineering internships with just a couple basic class projects to show for on my resume. As expected, I recieved no responses from any of my applications. I was disappointed, but I wasn't surprised. I knew that a respectable personal portfolio of programming projects was critical to gaining any traction in the engineering or technology roles. Especially as more and more computer science graduates began to struggle in the waning tech job market, I knew just getting out with the CS degree wouldn't take me far enough.  
 
 One degree finally in hand, I transferred to Brooklyn College in the Spring of 2025 to complete my bachelors. I was building a basic foundation of coding knowledge, but computers still seemed a lot like magic to me. Even though I was learning what buttons to press to manipulate them, I had a weak grasp on what was really going on under the hood.  
 
-Sometime during that first semester at Brooklyn College, I learned about Linux. I had been using the same Windows machine that I'd gotten my first year of college (the *real* first time) in 2017, and I'd had a Macbook back in high school, but the difference between the two meant little to me beyond Mac being the "prettier" one. When the 8 year old Dell began to crash a little too often for comfort, I decided I needed something new.  
+# When an 8 Year Old Dell Demanded a Change
+
+Sometime during that first semester at Brooklyn College, I learned about Linux. I had been using the same Windows machine that I'd gotten my first year of college (the *real* first time) in 2017, and I'd had a Macbook back in high school, but the difference between the two meant little to me beyond Mac being the "prettier" one. When the 8 year old Dell began to crash a little too often for comfort, I decided I needed something new.
 
 Curious about Linux at this point, I picked up a secondhand Thinkpad T490 off Ebay for around $200. With a couple flashdrives to back up 8 years worth of school and personal files, I installed Linux Mint on the T490. It was honestly anti-climactic -- it felt virtually identical to using Windows or MacOS. As I played around with it more, I realized this wasn't completely true. I forced myself to use the command line as much as possible to download software and sudo apt installed whenever I could. I completed programming assignments by editing regular text files and running them in the terminal. I took as many "harder" routes as possible to get things done because I knew, if left to my own devices, I wouldn't want to learn any of this. I just didn't care that much, but I knew I needed to.  
 
-Enter Arch. I've always been drawn to a challenge. I'm the kind of person that hikes to see how fast I can get to the top of the mountain, not to enjoy the view (that's secondary for me). When I initially explored Linux, I'd read about the Arch distro but figured it was above my skill level at the time. But I got bored of Mint quickly, and though I'm sure I could have found ways on that distro to explore more about Linux, I decided to just throw myself into the deep in. I'd install Arch Linux.  
+# Why I Got Bored of Easy
 
-I started with the old Dell I still had in case I screwed up real bad. I wanted to try a completely manual install on my first go, but I used the archinstall script just so I could say I got it done. I booted up with XFCE as my desktop environment and again found myself in a similar anti-climactic position as I did thefirst time. It was too easy. I wanted to be forced to build things, break them, and fix them without having a safety net. So I did a simple manual install of Arch on my T490. No desktop environment, just dwm and a dream.  
+Enter Arch. I've always been drawn to a challenge. I'm the kind of person that hikes to see how fast I can get to the top of the mountain, not to enjoy the view (that's secondary for me). When I initially explored Linux, I'd read about the Arch distro but figured it was above my skill level at the time. But I got bored of Mint quickly. Though I'm sure I could have explored more on that distro, I decided to just throw myself into the deep in. I'd install Arch Linux.  
 
-And that's where I am now. I don't have much beyond the basic install, and I want to use this blog to document my learning and journey with Arch. It'll be great to refer back to in case I forget how I did something, but it'll also be a wonderful way to see how far I've come in my learning. I'm a long way from printing "Hello World" to the commmand line in CSC 110, and I'm excited to see how much further I'll go.
+I started with the old Dell I still had in case I screwed up real bad. I wanted to try a completely manual install on my first go, but I used the archinstall script just so I could say I got it done. I booted up with XFCE as my desktop environment and again found myself feeling the same way I did after installing Linux Mint. It was too easy. I wanted to be forced to build things, break them, and fix them without having a safety net. So I did a simple manual install of Arch on my T490. No desktop environment, just dwm and a dream.  
+
+# What to Expect From This Linux Noob
+
+And that's where I am now. I don't have much beyond the basic install, and I want to this blog to be my public diary documenting my struggles, configs, and breakthroughs. It'll be great to refer back to in case I forget how I did something, and I'll enjoy seeing  how far I've come in my learning. I'm a long way from printing "Hello World" to the commmand line in CSC 110, but somehow the journey is only just beginning.
+
