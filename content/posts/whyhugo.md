@@ -1,6 +1,6 @@
 +++
 date = '2025-10-04T18:34:18-04:00'
-title = 'Why Hugo (and a little bash script to make deploying easier...)'
+title = 'Why Hugo (and a little shell script to make deploying easier...)'
 +++
 
 I wanted a fast, simple way to get this blog up and running. I also wanted to learn how I can host a site on GitHub since I 1) knew it was possible and 2) had never gotten the chance to do it.
@@ -23,7 +23,7 @@ I decided to use the [Xmin](https://xmin.yihui.org/) theme. Clean, simple. Good 
 
 ## Extra: Shell Script for Deployment
 
-Since I've managing 2 separate repositories for the source code and deploying the site, I tried my hand at a shell script to automate the process.
+Since I'm managing 2 separate repositories for the source code and deploying the site, I tried my hand at a shell script to automate the process.
 
 ```
     #!/bin/bash
@@ -68,5 +68,76 @@ Since I've managing 2 separate repositories for the source code and deploying th
     echo "Complete."
 
 ```
+I'll walk through the script line-by-line, partly to explain for the reader, mostly to check my own understanding of the code.
 
-*More explanation of script to come...*
+```
+    #!/bin/bash
+```
+
+Known as a "shebang" in Unix, this line specifies to the operating system to use the bash shell as the default shell to run the commands that will follow in the script.
+
+```
+    set -e
+``` 
+The `set` command allows for setting or unsetting different shell options/parameters. An example of the variables that can be passed to this command is the `-x` flag (`xtrace`) for debugging. The `-e` flag (`errexit`) makes the script exit immediately if a command fails. In the context of this script, this is good to use so that any failure in pushing my changes doesn't result in a partial deployment. 
+
+```
+    mv public/.git /tmp/public-git
+```
+Here, I copy the .git file from my project directory to a temporary folder. I'll explain further why next.
+
+```
+    echo "Building site..."
+    hugo --cleanDestinationDir
+``` 
+After printing an update to the terminal that the site is being built, I build the site with the `hugo --cleanDestinationDir` command. Passing `--cleanDestinationDir` with this command ensures that stale content (old pages or assets like images that are no longer being used) is deleted from the `public/` directory before the new site is built.
+
+However, `--cleanDestinationDir` also deletes hidden files (like `.git`). Losing `.git` means losing the remote connection to `linuxnoob.git`. This is why I copy `.git` over to /tmp/public-git before the entire `public/` directory is deleted and rebuilt.
+
+```
+    mv /temp/public-git
+    public/.git
+```
+With the site now rebuilt in `public/`, I can move `.git` back into the `public/` directory. 
+
+```
+    echo "Deploying to GitHub pages..."
+    cd public
+    git add .
+    message="Rebuilt site $date"
+    if [ -n "$*" ]; then
+        message="$*"
+    fi
+```
+An update message prints to signal that the site has been created successfully and that the script is now pushing the changes.
+
+First, the site itself will be pushed to the `linuxnoob.git` repository that hosts `ebribi.github.io/linuxnoob/`. All changes from the current directory are staged for commit with `git add .`, including new and modified files. 
+
+A default message for the commit is stored in the `message` variable. The following conditional statement allows for passing a unique commit message when running the script.
+
+`$*` is a special bash parameter that takes all parameters passed with `./deploy.sh` in the command line and joins them together with spaces. Since the parameter is in quotes (`"$*"`), it produces a single string.
+
+The `-n` parameter right before test that this string is non-zero, or within this use case, if a unique commit message was passed with the script. If a message was, then the commit message gets saved in the `message` variable that originally stored the default commit message.
+
+```
+    git commit -m "$message"
+    git push origin main
+```
+The commit is created with the files staged with `git add .` and the message stored in `message`. The comit is pushed to the remote `linuxnoob.git` GitHub repository's main branch.
+
+The `linuxnoob.git` repository now reflects the current state of the site, meaning the hosted site on `ebribi.github.io/linuxnoob/` is also updated. I could be done here, but I'd like for the entire Hugo project source code to be tracked in the `linuxblog.git` repository as well.
+
+```
+    cd ... 
+    echo "Backing up source..."
+    git add .
+    git commit -m "$message"
+    git push origin main
+    
+    echo "Complete."
+```
+The script moves back to the project's root directory, stages all changes, creates a commit with the same message as before, and pushes this to the `linuxblog.git` repository that is the remote repo for the project's source code.
+
+Barring any errors along the way, both repositories have now been updated with the changes to the site and the source code.
+
+*More to come...*
