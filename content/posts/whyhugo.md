@@ -7,13 +7,15 @@ I wanted a fast, simple way to get this blog up and running. I also wanted to le
 
 ## Hugo vs. Jekyll and GitHub Pages
 
-From what I read, Jeykll is the native, go-to option for hosting static sites on GitHub Pages. I opted for Hugo instead because it would be less automated and force me to get familiar with using git locally.
+From what I read, Jeykll is the native, go-to option for hosting static sites on GitHub Pages. I opted for Hugo instead because it would be less automated and force me to get familiar with using git locally. At this stage in my programming journey, challenging myself is a massive investment that I've already seen start to pay off. 
+
+Another feature of Hugo that make it a strong decision down the line: it's  **fast**. Being written in Go and distributed a single executable makes means Hugo rebuilds my site quick. This might not be a huge deal now when I only have a couple of pages, but should the size of my blog grow, speed will matter.
 
 I created 2 repositories in my GitHub: [one](https://github.com/ebribi/linux-blog) to store my source code, and [the other](https://github.com/ebribi/linuxnoob) to deploy the site.
 
-### Lesson #1 - You only get 1 .github.io
+## Lesson Learned - You only get 1 .github.io
 
-And it must be your username. For me, this is `ebribi.github.io`. I restarted this project 3-4 times because I named the repository `linuxnoob.github.io` thinking that I could `.github.io` to my heart's desire. Sadly, you can't. So instead, the base URL is `ebribi.github.io/linuxnoob`. Any other sites I host with GitHub Pages that isn't `ebribi.github.io` will have a base URL of `ebribi.github.io/[repo-name]`. 
+And it must be your GitHub username. For me, this is `ebribi.github.io`. I restarted this project 3-4 times because I named the repository `linuxnoob.github.io` thinking that I could `.github.io` to my heart's desire. Sadly, you can't. So instead, the base URL is `ebribi.github.io/linuxnoob`. Any other sites I host with GitHub Pages that isn't `ebribi.github.io` will have a base URL of `ebribi.github.io/[repo-name]`. 
 
 ## Setting Up
 
@@ -139,5 +141,3 @@ The `linuxnoob.git` repository now reflects the current state of the site, meani
 The script moves back to the project's root directory, stages all changes, creates a commit with the same message as before, and pushes this to the `linuxblog.git` repository that is the remote repo for the project's source code.
 
 Barring any errors along the way, both repositories have now been updated with the changes to the site and the source code.
-
-*More to come...*
